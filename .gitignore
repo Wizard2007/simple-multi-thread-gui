@@ -45,3 +45,8 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.local
+Source/RadXE3D/SimpleParser.identcache
+*.dcu
+Source/RadXE3D/Win32/Debug/SimpleParser.exe
+*.res

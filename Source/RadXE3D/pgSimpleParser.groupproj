@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F37049DC-F878-43A9-839C-9ED066816395}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SimpleParser.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SimpleParser">
+        <MSBuild Projects="SimpleParser.dproj"/>
+    </Target>
+    <Target Name="SimpleParser:Clean">
+        <MSBuild Projects="SimpleParser.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleParser:Make">
+        <MSBuild Projects="SimpleParser.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SimpleParser"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SimpleParser:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SimpleParser:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
